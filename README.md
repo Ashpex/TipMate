@@ -1,7 +1,7 @@
 # TipCalculator
 A simple tip calulator android app
 
-![Screenshot](./preview/preview.png
+![Screenshot](./preview/preview.png)
 
 ## What does this app do?
 
