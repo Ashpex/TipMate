@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.ashpex.tipcalculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -31,6 +34,12 @@ class MainActivity : AppCompatActivity() {
             else -> 0.10
         }
         var tip = tipPercentage * cost
+        if(binding.sharedBillSwitch.isChecked){
+            toggleView(binding.iconNumberOfPayer)
+        }
+        binding.sharedBillSwitch.setOnCheckedChangeListener { _, isChecked ->
+            toggleView(binding.iconNumberOfPayer)
+        }
         if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
@@ -47,5 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
-
+    fun toggleView(view: View) {
+        view.isVisible = !view.isVisible
+    }
 }
