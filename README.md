@@ -1,7 +1,10 @@
-# TipCalculator
+<img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" align="right" width="150px">
+<h1> TipCalculator </h1>
 A simple tip calulator android app
 
-![Screenshot](./preview/preview.png
+![Screenshot](./preview/preview.png)
+
+<a href="https://github.com/Ashpex/TipCalculator/releases/latest"><img width="200px" src="./preview/get-it-on-github.svg"></a>
 
 ## What does this app do?
 
