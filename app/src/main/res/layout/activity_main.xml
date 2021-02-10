@@ -86,6 +86,51 @@
                 android:text="@string/ok_service" />
 
         </RadioGroup>
+        <ImageView
+            android:id="@+id/icon_shared_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/shared_bill_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/shared_bill_switch"
+            app:srcCompat="@drawable/ic_receipt" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/shared_bill_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Shared bill tip?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tip_options"
+            app:layout_constraintTop_toBottomOf="@id/tip_options" />
+
+        <ImageView
+            android:id="@+id/icon_number_of_payer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/number_of_payer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/number_of_payer"
+            app:srcCompat="@drawable/ic_people" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/number_of_payer"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="Number of payer"
+            app:layout_constraintStart_toStartOf="@+id/cost_of_service"
+            app:layout_constraintTop_toBottomOf="@id/shared_bill_switch">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_of_payer_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
             android:id="@+id/icon_round_up"
@@ -104,8 +149,8 @@
             android:checked="true"
             android:text="@string/round_up_tip"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tip_options"
-            app:layout_constraintTop_toBottomOf="@id/tip_options" />
+            app:layout_constraintStart_toStartOf="@id/number_of_payer"
+            app:layout_constraintTop_toBottomOf="@id/number_of_payer" />
 
         <Button
             android:id="@+id/calculate_button"
