@@ -16,9 +16,12 @@ This app provides a quick way to calculate your tip with a simple design and str
 
 ## Compatibility
 
++ The Tip Calculator requires at least Android 5 Lollipop.
 
++ This app will work properly on devices without any Google service installed.
 
-The Tip Calculator requires at least Android 5 Lollipop.
+## Other related resources
 
-This app will work properly on devices without any Google service installed.
+You can easily use this site to calculate the tip without installing any app: [https://www.calculator.net/tip-calculator.html](https://www.calculator.net/tip-calculator.html)
 
+**Note**: I am not affiliated with this website.
