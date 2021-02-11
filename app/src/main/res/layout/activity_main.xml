@@ -100,7 +100,7 @@
             android:id="@+id/shared_bill_switch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:text="Shared bill tip?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tip_options"

@@ -18,10 +18,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.sharedBillSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                binding.iconNumberOfPayer.visibility = View.VISIBLE
+                binding.numberOfPayerEditText.visibility = View.VISIBLE
+                binding.numberOfPayer.visibility = View.VISIBLE
+            }
+            else{
+                binding.iconNumberOfPayer.visibility = View.GONE
+                binding.numberOfPayerEditText.visibility = View.GONE
+                binding.numberOfPayer.visibility = View.GONE
+            }
+        }
         binding.calculateButton.setOnClickListener { calculateTip() }
     }
 
     private fun calculateTip() {
+
         val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
         if (cost == null) {
@@ -34,12 +47,7 @@ class MainActivity : AppCompatActivity() {
             else -> 0.10
         }
         var tip = tipPercentage * cost
-        if(binding.sharedBillSwitch.isChecked){
-            toggleView(binding.iconNumberOfPayer)
-        }
-        binding.sharedBillSwitch.setOnCheckedChangeListener { _, isChecked ->
-            toggleView(binding.iconNumberOfPayer)
-        }
+
         if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
