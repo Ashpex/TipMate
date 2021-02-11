@@ -8,4 +8,7 @@
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount: %s</string>
+    <string name="total">Total: %s</string>
+    <string name="tip_per_payer">Tip per payer: %s</string>
+    <string name="total_per_payer">Total per payer: %s</string>
 </resources>

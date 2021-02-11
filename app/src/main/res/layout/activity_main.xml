@@ -175,5 +175,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calculate_button"
             tools:text="Tip Amount: $10" />
+        <TextView
+            android:id="@+id/total_result"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip_result"
+            tools:text="Total: $10" />
+        <TextView
+            android:id="@+id/tip_per_payer"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_result"
+            tools:text="Tip per payer: 2$" />
+        <TextView
+            android:id="@+id/total_per_payer"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip_per_payer"
+            tools:text="Total per payer: 12$" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

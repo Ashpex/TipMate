@@ -46,13 +46,33 @@ class MainActivity : AppCompatActivity() {
             R.id.option_fifteen_percent -> 0.15
             else -> 0.10
         }
+
         var tip = tipPercentage * cost
+        var total = tip + cost
 
         if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
+            total = kotlin.math.ceil(total)
         }
+
+        if(binding.sharedBillSwitch.isChecked){
+            var numberOfPayer = binding.numberOfPayerEditText.text.toString().toInt()
+            var tipPerPayer = tip/numberOfPayer
+            var totalPerPayer = cost/numberOfPayer + tipPerPayer
+            if(binding.roundUpSwitch.isChecked){
+                tipPerPayer = kotlin.math.ceil(tipPerPayer)
+                totalPerPayer = kotlin.math.ceil(totalPerPayer)
+            }
+            val formattedTipPerPayer = NumberFormat.getCurrencyInstance().format(tipPerPayer)
+            val formattedTotalPerPayer = NumberFormat.getCurrencyInstance().format(totalPerPayer)
+            binding.tipPerPayer.text =  getString(R.string.tip_per_payer, formattedTipPerPayer)
+            binding.totalPerPayer.text = getString(R.string.total_per_payer, formattedTotalPerPayer)
+        }
+
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
+        val formattedTotal = NumberFormat.getCurrencyInstance().format(total)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
+        binding.totalResult.text = getString(R.string.total, formattedTotal)
     }
     private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
