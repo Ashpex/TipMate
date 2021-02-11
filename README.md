@@ -14,6 +14,14 @@ The Tip Calculator calculates tip amount for three most-used percentages (based 
 
 This app provides a quick way to calculate your tip with a simple design and straightforward user interface.
 
+### Features:
+
++ Total tip amount
++ Total cost that includes the tip
++ Shared bill supported
+  + Tip per person
+  + Total cost per person
+
 ## Compatibility
 
 + The Tip Calculator requires at least Android 5 Lollipop.
