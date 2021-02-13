@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 binding.iconNumberOfPayer.visibility = View.GONE
                 binding.numberOfPayerEditText.visibility = View.GONE
                 binding.numberOfPayer.visibility = View.GONE
+                binding.totalPerPayer.text = ""
+                binding.tipPerPayer.text = ""
             }
         }
         binding.calculateButton.setOnClickListener { calculateTip() }
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         val cost = stringInTextField.toDoubleOrNull()
         if (cost == null) {
             binding.tipResult.text = ""
+            binding.totalResult.text = ""
             return
         }
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
@@ -56,7 +59,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         if(binding.sharedBillSwitch.isChecked){
-            var numberOfPayer = binding.numberOfPayerEditText.text.toString().toInt()
+            var numberOfPayer = binding.numberOfPayerEditText.text.toString().toIntOrNull()
+            if(numberOfPayer == null){
+                binding.iconNumberOfPayer.visibility = View.GONE
+                binding.numberOfPayerEditText.visibility = View.GONE
+                binding.numberOfPayer.visibility = View.GONE
+                binding.totalPerPayer.text = ""
+                binding.tipPerPayer.text = ""
+                return
+            }
             var tipPerPayer = tip/numberOfPayer
             var totalPerPayer = cost/numberOfPayer + tipPerPayer
             if(binding.roundUpSwitch.isChecked){
